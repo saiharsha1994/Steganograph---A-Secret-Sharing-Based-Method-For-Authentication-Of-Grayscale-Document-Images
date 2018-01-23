@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+	<managed-bean>
+		<managed-bean-name>loginMB</managed-bean-name>
+		<managed-bean-class>PresentationTier.LoginMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		
+		<managed-property>
+			<property-name>logoutMB</property-name>
+			<value> #{logoutMB}</value>
+		</managed-property>
+		
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>uploadMB</managed-bean-name>
+		<managed-bean-class>PresentationTier.UploadMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>loginMB</property-name>
+			<value> #{loginMB}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>inboxMB</property-name>
+			<value> #{inboxMB}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>inboxMB</managed-bean-name>
+		<managed-bean-class>PresentationTier.InboxMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>loginMB</property-name>
+			<value> #{loginMB}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>sentMB</managed-bean-name>
+		<managed-bean-class>PresentationTier.SentMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>loginMB</property-name>
+			<value> #{loginMB}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>logoutMB</managed-bean-name>
+		<managed-bean-class>PresentationTier.LogoutMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>LoginPage</display-name>
+		<from-view-id>/LoginPage.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success1</from-outcome>
+			<to-view-id>/LoginPage.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Inbox</display-name>
+		<from-view-id>/Inbox.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/Failure.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Inbox</display-name>
+		<from-view-id>/Inbox.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/Inbox.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Inbox</display-name>
+		<from-view-id>/Inbox.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success1</from-outcome>
+			<to-view-id>/Decrypt.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>ComposeMail</display-name>
+		<from-view-id>/ComposeMail.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>SentItems</display-name>
+		<from-view-id>/SentItems.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/SentItems.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>SentItems</display-name>
+		<from-view-id>/SentItems.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success1</from-outcome>
+			<to-view-id>/Sentjsp.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Button</display-name>
+		<from-view-id>/Button.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/Button.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>ComposeMail</display-name>
+		<from-view-id>/ComposeMail.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/ComposeMail.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>LoginPage</display-name>
+		<from-view-id>/LoginPage.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/Homepage.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>
